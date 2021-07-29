@@ -40,9 +40,19 @@ namespace BooruDex.Booru.Template
 				this.HasTagRelatedApi =
 				this.HasWikiApi = true;
 			this._DefaultPostLimit = 200;
-			this._TagsLimit = 2;
 			this._PageLimit = 1000;
 			this._ApiVersion = "";
+			
+			if (httpClient != null && httpClient.DefaultRequestHeaders.Contains("Authorization"))
+			{
+				this._TagsLimit = 6; //6 is a tag limit for Gold members
+				this._Authentication = true;
+			}
+			else
+			{
+				this._TagsLimit = 2;
+			}
+
 		}
 
 		#endregion Constructor & Destructor
