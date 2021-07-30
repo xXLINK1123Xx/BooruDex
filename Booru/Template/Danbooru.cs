@@ -138,7 +138,8 @@ namespace BooruDex.Booru.Template
 				width: json.GetProperty("image_width").GetInt32(),
 				previewHeight: 0,
 				previewWidth: 0,
-				source: json.GetProperty("source").GetString());
+				source: json.GetProperty("source").GetString(),
+				artist: json.GetProperty("tag_string_artist").GetString());
 		}
 
 		/// <inheritdoc/>

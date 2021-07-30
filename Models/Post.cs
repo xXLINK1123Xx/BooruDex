@@ -56,7 +56,8 @@
 			int width = 0,
 			int? previewHeight = 0,
 			int? previewWidth = 0,
-			string source = "")
+			string source = "",
+			string artist = "")
 		{
 			this.ID = id;
 			this.FileUrl = fileUrl;
@@ -70,7 +71,13 @@
 			this.PreviewHeight = previewHeight;
 			this.PreviewWidth = previewWidth;
 			this.Source = source;
+			this.Artist = artist;
 		}
+		
+		/// <summary>
+		/// Gets the Artist's name of the post.
+		/// </summary>
+		public string Artist { internal set; get; }
 
 		/// <summary>
 		/// Gets the ID of the post.
