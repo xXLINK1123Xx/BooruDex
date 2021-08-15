@@ -57,10 +57,14 @@
 			int? previewHeight = 0,
 			int? previewWidth = 0,
 			string source = "",
-			string artist = "")
+			string artists = "",
+			string smallFileUrl = "",
+			string characters = null,
+			string copyrights = null)
 		{
 			this.ID = id;
 			this.FileUrl = fileUrl;
+			this.SmallFileUrl = smallFileUrl;
 			this.PreviewUrl = previewUrl;
 			this.PostUrl = postUrl + this.ID;
 			this.Rating = rating;
@@ -71,13 +75,15 @@
 			this.PreviewHeight = previewHeight;
 			this.PreviewWidth = previewWidth;
 			this.Source = source;
-			this.Artist = artist;
+			this.Artists = artists;
+			this.Characters = characters;
+			this.Copyrights = copyrights;
 		}
 		
 		/// <summary>
 		/// Gets the Artist's name of the post.
 		/// </summary>
-		public string Artist { internal set; get; }
+		public string Artists { internal set; get; }
 
 		/// <summary>
 		/// Gets the ID of the post.
@@ -93,6 +99,11 @@
 		///		Gets the URL of the file.
 		/// </summary>
 		public string FileUrl { internal set; get; }
+		
+		/// <summary>
+		///		Gets the URL of the smaller file.
+		/// </summary>
+		public string SmallFileUrl { internal set; get; }
 
 		/// <summary>
 		///		Gets the URL of the preview image.
@@ -108,6 +119,16 @@
 		///		Gets the collection containing all the <see cref="Tag"/> associated with the file.
 		/// </summary>
 		public string Tags { internal set; get; }
+		
+		/// <summary>
+		///		Gets the name of the characters from the post or <see langword="null"/> if there is no characters.
+		/// </summary>
+		public string Characters { internal set; get; }
+		
+		/// <summary>
+		///		Gets the name of the copyright source or <see langword="null"/> if copyright is unknown.
+		/// </summary>
+		public string Copyrights { internal set; get; }
 
 		/// <summary>
 		///		Gets the size of the file, in bytes, or

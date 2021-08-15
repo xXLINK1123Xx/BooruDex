@@ -139,7 +139,10 @@ namespace BooruDex.Booru.Template
 				previewHeight: 0,
 				previewWidth: 0,
 				source: json.GetProperty("source").GetString(),
-				artist: json.GetProperty("tag_string_artist").GetString());
+				artists: json.GetProperty("tag_string_artist").GetString(),
+				smallFileUrl: json.GetProperty("large_file_url").GetString(),
+				characters: this.PropertyExist(json, "tag_string_character") ? json.GetProperty("tag_string_character").GetString() : null,
+				copyrights:  this.PropertyExist(json, "tag_string_copyright") ? json.GetProperty("tag_string_copyright").GetString() : null);
 		}
 
 		/// <inheritdoc/>
